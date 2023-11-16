@@ -13,13 +13,14 @@ function searchData() {
     };
 
     // Make a POST request to the Google Apps Script Web App
-    fetch('https://script.google.com/macros/s/AKfycbxdyDYCaGY-R7xcULzm9BTlZLr_EcU9c8X4Jv9RpMUf53F-UejoHXTZPWxfBboKt60R/exec', {
-        method: 'POST',
-        body: JSON.stringify(requestData),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+    fetch('https://script.google.com/macros/s/AKfycbyxUYUl1dkT9Tzw7FUUSp8n8RCzz1glAV-NZMFK4yskJHdE_qtkyeCpgMLdQnGjdB6u/exec', {
+    method: 'POST',
+    body: JSON.stringify(requestData),
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    mode: 'no-cors' // Tindakan sementara
+})
     .then(response => response.json())
     .then(data => {
         // Call a function to update the table with the response data
