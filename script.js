@@ -13,7 +13,8 @@ function searchData() {
     };
 
     // Make a POST request to the Google Apps Script Web App
-    fetch('https://script.google.com/macros/s/AKfycbyxUYUl1dkT9Tzw7FUUSp8n8RCzz1glAV-NZMFK4yskJHdE_qtkyeCpgMLdQnGjdB6u/exec', {
+    fetch('https://script.google.com/macros/library/d/16Ae3HXl_XiNAET96884-pD2Hv3nKlZLengHtxOJLThvnv_JUB9e8YyGY/3'
+    , {
     method: 'POST',
     body: JSON.stringify(requestData),
     headers: {
