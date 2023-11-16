@@ -20,7 +20,6 @@ function searchData() {
     headers: {
         'Content-Type': 'application/json'
     },
-    mode: 'no-cors' // Tindakan sementara
 })
     .then(response => response.json())
     .then(data => {
