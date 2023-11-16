@@ -13,22 +13,27 @@ function searchData() {
   };
 
   // Make a POST request to the Google Apps Script Web App
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Example of a CORS proxy
-const targetUrl = 'https://script.google.com/macros/s/AKfycbxpDKIANQ9SOGe8jO4V-XkPZ8_678VFdaUo0Rsm2eHx7BLRRWdQlm2QR4GyZHG_0wcN/exec';
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Example of a CORS proxy
+  const targetUrl =
+    "https://script.google.com/macros/s/AKfycbxpDKIANQ9SOGe8jO4V-XkPZ8_678VFdaUo0Rsm2eHx7BLRRWdQlm2QR4GyZHG_0wcN/exec";
 
-fetch(proxyUrl + targetUrl, {
-    method: 'POST',
+  fetch(proxyUrl + targetUrl, {
+    method: "POST",
     body: JSON.stringify(requestData),
     headers: {
-        'Content-Type': 'application/json'
-    }
-})
-.then(response => response.json())
-.then(data => {
-    updateTable(data);
-})
-.catch(error => console.error('Error:', error));
-
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.text()) // Convert the response to text
+    .then((text) => {
+      console.log("Received response:", text); // Log the text response
+      return JSON.parse(text); // Attempt to parse it as JSON
+    })
+    .then((data) => {
+      // Call a function to update the table with the response data
+      updateTable(data);
+    })
+    .catch((error) => console.error("Error:", error));
 }
 
 function updateTable(data) {
