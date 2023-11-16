@@ -14,7 +14,7 @@ function searchData() {
 
   // Make a POST request to the Google Apps Script Web App
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Example of a CORS proxy
-const targetUrl = 'https://script.google.com/macros/s/AKfycbwgF4b7UTKkNfdF3Y5B3QWvHCyJgpkdb2bRB0lsh9psnvCx5f__0XQj1pFSFVVCZ4Gm/exec';
+const targetUrl = 'https://script.google.com/macros/s/AKfycbxpDKIANQ9SOGe8jO4V-XkPZ8_678VFdaUo0Rsm2eHx7BLRRWdQlm2QR4GyZHG_0wcN/exec';
 
 fetch(proxyUrl + targetUrl, {
     method: 'POST',
